@@ -45,15 +45,21 @@ client.on('message', message => {
         break;
       case 'funny':
         message.channel.send({
-          files: ['https://i.ytimg.com/vi/gHw_VxC7iFc/maxresdefault.jpg']
+          files: ['https://www.freecodecamp.org/news/content/images/2019/07/best-js-meme-to-date-2.png']
         });
         break;
       case 'voice':
         const streamOptions = { seek: 0, volume: 1 };
-        var voiceChannel = message.member.voiceChannel;
-        if(!message.member.voice.channel) return message.channel.send("🖕 Get in a call"); //If you are not in the voice channel, then return a message
-        //message.member.voice.channel.join().then(connection => {
-        //});
+        var voiceChannel = message.member.voice.channel;
+        if(!message.member.voice.channel) return message.channel.send("I can not join the channel if your not in one"); //If you are not in the voice channel, then return a message
+        voiceChannel.join()/*.then(connection => {
+            const dispatcher = connection.play('vine-boom.mp3');
+            dispatcher.on("finish", end => {
+                voiceChannel.leave();
+            });*/
+        });
+        //message.member.voice.channel.join();
+        
         break;
       case 'home' :
         for(var i =0; i < 5; i++){
