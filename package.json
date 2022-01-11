@@ -1,0 +1,33 @@
+{
+  "name": "discord-bot-template",
+  "version": "1.0.0",
+  "description": "Enough to get you started",
+  "main": "app.js",
+  "dependencies": {
+    "@discordjs/voice": "^0.7.5",
+    "discord.js": "^12.5.3",
+    "dotenv": "^9.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.26.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timburr1/discord-bot-template.git"
+  },
+  "keywords": [
+    "node.js",
+    "discord",
+    "memes"
+  ],
+  "author": "Tim Burr",
+  "license": "CC0",
+  "bugs": {
+    "url": "https://github.com/timburr1/discord-bot-template/issues"
+  },
+  "homepage": "https://github.com/timburr1/discord-bot-template#readme"
+}
