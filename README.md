@@ -1,6 +1,6 @@
 # Discord-Bot-Project
-School project
-prefix *
+This is a School project.
+ prefix *
 current commands: 
 ping: will return a stirng. 
 funny: will return a image. 
