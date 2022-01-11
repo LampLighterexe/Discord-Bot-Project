@@ -57,7 +57,7 @@ client.on('message', message => {
             dispatcher.on("finish", end => {
                 voiceChannel.leave();
             });*/
-        });
+        //});
         //message.member.voice.channel.join();
         
         break;
