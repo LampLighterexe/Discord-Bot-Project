@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const PREFIX = '*';
 const { joinVoiceChannle } = require('@discordjs/voice');
+const { OpusEncoder } = require('@discordjs/opus');
 /*const connection = joinVoiceChannle({
   channelId: 927590527950553168,
   guildId: 927590080623804416,
@@ -52,12 +53,12 @@ client.on('message', message => {
         const streamOptions = { seek: 0, volume: 1 };
         var voiceChannel = message.member.voice.channel;
         if(!message.member.voice.channel) return message.channel.send("I can not join the channel if your not in one"); //If you are not in the voice channel, then return a message
-        voiceChannel.join()/*.then(connection => {
-            const dispatcher = connection.play('vine-boom.mp3');
+          voiceChannel.join().then(connection => {
+           const dispatcher = connection.play('vine-boom.mp3');
             dispatcher.on("finish", end => {
-                voiceChannel.leave();
-            });*/
-        //});
+              voiceChannel.leave();
+        })
+        });
         //message.member.voice.channel.join();
         
         break;
