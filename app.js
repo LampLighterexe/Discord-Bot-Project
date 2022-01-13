@@ -19,16 +19,13 @@ client.on('ready', () => {
    client.user.setActivity(' Vine Thunds', { type: 'LISTENING' });
     });
 
+//function thequent(){
+  //message.channel.send('<@376176320561938434>');
+  //}
+  
 //PLAYING: WATCHING: LISTENING: STREAMING:
 client.on('message', message => {
-  //if(message.content == "Among Us" || "among us"){
-     // message.channel.send('you are sus')
-  //}
-  function thequent(){
-  message.channel.send('<@376176320561938434>');
-  }
-    
-
+     
     let args = message.content.substring(PREFIX.length).split(" ");
 
   if (message.author.bot) return;
@@ -39,17 +36,19 @@ client.on('message', message => {
 
     switch(args[0]){
       case 'help':
-      message.channel.send('Current comands and features: ping: will return a string. funny: will return an image. voise: will join a voice call (noise coming soon). *more to come eventually.* ')
+      message.channel.send('Current comands and features: ttsVine: will return a tts string. funny: will return an image. vine: will join a voice call and play a noise and leave. ping: will take user input of a name and the number of times. *more to come eventually maybe.* ')
       break;
-      case 'ping':
-        message.channel.send('*vine boom*');
-        break;
+      case 'ttsVine':
+       message.channel.send('*vine boom*',{
+         tts: true
+         });
+       break;
       case 'funny':
         message.channel.send({
           files: ['https://www.freecodecamp.org/news/content/images/2019/07/best-js-meme-to-date-2.png']
         });
         break;
-      case 'voice':
+      case 'vine':
         const streamOptions = { seek: 0, volume: 1 };
         var voiceChannel = message.member.voice.channel;
         if(!message.member.voice.channel) return message.channel.send("I can not join the channel if your not in one"); //If you are not in the voice channel, then return a message
@@ -62,12 +61,24 @@ client.on('message', message => {
         //message.member.voice.channel.join();
         
         break;
-      case 'home' :
-        for(var i =0; i < 5; i++){
-          thequent();
+      case 'ping' :
+        var num = 5;
+       	const taggedUser = message.mentions.users.first();
+         var tokens = message.content.split(" ");
+         if(tokens.length > 2) {
+          console.log(tokens[2]);
+          num = tokens[2];
+         } else {
+           console.log("missing arg")
+         }
+         
+        
+        for(var i = 0; i < num; i++){
+        message.channel.send('<@' + taggedUser.id + '>');
         }
-      }
-    
+      break;
+      
+    }
 });
 
 function getRandomInt(max) {
