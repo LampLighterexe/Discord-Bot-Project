@@ -2,9 +2,10 @@
 This is a School project.
  prefix *
 current commands: 
-ping: will return a stirng. 
+ttsVine: will return a tts stirng. 
 funny: will return a image. 
-voice: will join a voice channel if in one and if not will return a string. 
+vine: will join a voice channel and play a noise and leave if in one. and if not will return a string. 
+ping: will take user input of a user and number of times and will that user that many times
 
 (also quick note you might have to update node.js and discorrd.js when setting this up as well geting ffmpeg, @discordjs/voice, ) 
 
