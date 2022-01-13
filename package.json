@@ -4,12 +4,17 @@
   "description": "Enough to get you started",
   "main": "app.js",
   "dependencies": {
+    "@discordjs/opus": "github:discordjs/opus",
     "@discordjs/voice": "^0.7.5",
     "discord.js": "^12.5.3",
-    "dotenv": "^9.0.2"
+    "dotenv": "^9.0.2",
+    "ffmpeg-static": "^4.4.1",
+    "libsodium-wrappers": "^0.7.9",
+    "text-to-speech-js": "^1.1.10"
   },
   "devDependencies": {
-    "eslint": "^7.26.0"
+    "eslint": "^7.26.0",
+    "node": "^16.13.1"
   },
   "scripts": {
     "start": "node app.js",
