@@ -3,13 +3,6 @@ const client = new Discord.Client();
 const PREFIX = '*';
 const { joinVoiceChannle } = require('@discordjs/voice');
 const { OpusEncoder } = require('@discordjs/opus');
-/*const connection = joinVoiceChannle({
-  channelId: 927590527950553168,
-  guildId: 927590080623804416,
-  adapterCreator: channel.guild.voiceAdapterCreator,
-  });*/
-
-
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -18,12 +11,8 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
    client.user.setActivity(' Vine Thunds', { type: 'LISTENING' });
     });
-
-//function thequent(){
-  //message.channel.send('<@376176320561938434>');
-  //}
-  
 //PLAYING: WATCHING: LISTENING: STREAMING:
+
 client.on('message', message => {
      
     let args = message.content.substring(PREFIX.length).split(" ");
@@ -58,7 +47,7 @@ client.on('message', message => {
               voiceChannel.leave();
         })
         });
-        //message.member.voice.channel.join();
+
         
         break;
       case 'ping' :
@@ -80,9 +69,5 @@ client.on('message', message => {
       
     }
 });
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
 
 client.login(process.env.token);
