@@ -11,9 +11,9 @@ ping: will take user input of a user and number of times and will that user that
 
 
 sources 
-https://stackoverflow.com/questions/41580798/how-to-play-audio-file-into-channel
-https://www.npmjs.com/package/ffmpeg-static
-https://stackoverflow.com/questions/65896154/error-cannot-find-module-discordjs-opus
-https://discordjs.guide/voice/#extra-dependencies
-https://dev.to/arnavkr/updating-node-js-to-16-in-replit-1ep0
-https://stackoverflow.com/questions/65896154/error-cannot-find-module-discordjs-opus
+https://stackoverflow.com/questions/41580798/how-to-play-audio-file-into-channel,
+https://www.npmjs.com/package/ffmpeg-static,
+https://stackoverflow.com/questions/65896154/error-cannot-find-module-discordjs-opus,
+https://discordjs.guide/voice/#extra-dependencies,
+https://dev.to/arnavkr/updating-node-js-to-16-in-replit-1ep0,
+https://stackoverflow.com/questions/65896154/error-cannot-find-module-discordjs-opus,
