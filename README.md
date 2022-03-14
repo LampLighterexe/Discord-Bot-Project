@@ -7,7 +7,7 @@ funny: will return a image.
 vine: will join a voice channel and play a noise and leave if in one. and if not will return a string. 
 ping: will take user input of a user and number of times and will that user that many times
 
-(also quick note you might have to update node.js and discorrd.js when setting this up as well geting ffmpeg, @discordjs/voice, ) 
+(also quick note you might have to update node.js and discord.js when setting this up as well geting ffmpeg, @discordjs/voice, ) 
 
 
 sources 
