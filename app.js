@@ -4,6 +4,7 @@ const PREFIX = '*';
 const { joinVoiceChannle } = require('@discordjs/voice');
 const { OpusEncoder } = require('@discordjs/opus');
 const today = new Date();
+var Timer = 3000;
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -19,20 +20,33 @@ client.on('message', async message => {
 const embed = new Discord.MessageEmbed().setTitle('Attachment').setImage('images/6bf.png');
   
     let args = message.content.substring(PREFIX.length).split(" ");
+    let word = message.content.split(" ");
 
   if (message.author.bot) return;
 
-  if(message.content == 'cs'){
+  
+  for (let i = 0; i < word.length; i++) {
+    if(word[i] == 'cs'){
     message.channel.send('cringe')
+    }
+    if (word[i] == "owen"){
+    message.channel.send('what the owen doin').then(botMessage => { 
+    function edit() {
+    botMessage.edit("old nasus");
+    botMessage.channel.send({ embeds: [embed], files: ['images/nas.png'] });
+    }
+      setTimeout(edit, Timer);
+      
+    })
+    }
   }
+  
 
   //TODO figure out await
-  if (message.content == "owen"){
-    message.channel.send('what the owen doin').then(botMessage => { 
-    await botMessage.edit("old nasus");
-    await botMessage.channel.send({ embeds: [embed], files: ['images/nas.png'] });
-    })
-  }
+  //Update I just did a time out instdead becuase of awite being dumb. I may try some other time
+  
+
+  
   
 //TODO Add an image editor and maybe hangman 
     switch(args[0]){
@@ -42,7 +56,7 @@ const embed = new Discord.MessageEmbed().setTitle('Attachment').setImage('images
       
       case 'ttsVine':
        message.channel.send('*vine boom*',{
-         tts: false
+         tts: false 
          });
        break;
       
@@ -57,7 +71,7 @@ const embed = new Discord.MessageEmbed().setTitle('Attachment').setImage('images
         var voiceChannel = message.member.voice.channel;
         if(!message.member.voice.channel) return message.channel.send("I can not join the channel if your not in one"); //If you are not in the voice channel, then return a message
           voiceChannel.join().then(connection => {
-           const dispatcher = connection.play('vine-boom.mp3');
+           const dispatcher = connection.play('sounds/vine-boom.mp3');
             dispatcher.on("finish", end => {
               voiceChannel.leave();
         })
@@ -68,7 +82,7 @@ const embed = new Discord.MessageEmbed().setTitle('Attachment').setImage('images
       if(!message.member.voice.channel) return message.channel.send("I can not join the channel if your not in one");
       var voiceChannel = message.member.voice.channel;
       voiceChannel.join().then(connection => {
-           const dispatcher = connection.play('sp.mp3');
+           const dispatcher = connection.play('sounds/sp.mp3');
             dispatcher.on("finish", end => {
               voiceChannel.leave();
         })
@@ -80,11 +94,9 @@ const embed = new Discord.MessageEmbed().setTitle('Attachment').setImage('images
        	const taggedUser = message.mentions.users.first();
          var tokens = message.content.split(" ");
          if(tokens.length > 2) {
-          console.log(tokens[2]);
+          //console.log(tokens[2]);
           num = tokens[2];
-         } else {
-           console.log("missing arg")
-         }
+         } 
          
         
         for(var i = 0; i < num; i++){
@@ -92,23 +104,24 @@ const embed = new Discord.MessageEmbed().setTitle('Attachment').setImage('images
         }
       break;
 
-      //TODO figure out why it won't edit it's messages
-      // case 'edit' :
-      //   var delay = 5000
-      //   message.channel.send('what the owen doin').then(botMessage => { 
-      //      await botMessage.edit("old nasus");
-      //     botMessage.channel.send({ embeds: [embed], files: ['images/nas.png'] });
-      //   })
-      //   break;
-
       case 'owensus' :
         message.channel.send('mmmm fromsty')
         message.channel.send({ embeds: [embed], files: ['images/6bf.png'] });
         break;
-
+        
       case 'mysauce' :
         message.channel.send('my limnguine...')
         message.channel.send({ embeds: [embed], files: ['images/pizza.png'] });
+        break;
+
+      case 'rot' :
+        var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+        //user input 
+        let split_lip = message.content.split("");
+        for(var j = 0; j < split_lip.length; j++){
+          message.channel.send(split_lip[j])
+        }
+        
         break;
     }
 
